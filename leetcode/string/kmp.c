@@ -41,7 +41,7 @@ void get_next(const char *p, int next[])
 
 int kmp(const char *s, const char *p, int next[])
 {
-    //kmp test
+    //start test
     int slen = strlen(s);
     int plen = strlen(p);
     int i = 0, j = 0;
