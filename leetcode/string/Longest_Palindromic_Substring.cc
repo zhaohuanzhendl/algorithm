@@ -63,7 +63,59 @@ public:
 
     string longestPS_Manacher(string s)
     {
-    
+        const int len = s.size();
+        if (len <= 1) {
+            return s;
+        }        
+
+        string str = preProcess(s);
+        int n = str.size();
+        int id = 0, mx = 0;
+        vector<int>p(n, 0);
+
+        for (int i = 0; i < len; i++) {
+            p[i] = mx > i ? min(p[2 * id - 1], mx - i) : 1;
+            
+            while (str[i + p[i]] == str[i - p[i]]) {
+                p[i]++;
+            }
+
+            if (i + p[i] > mx) {
+                mx = i + p[i];
+                id = i;
+            }
+
+        }
+
+        int maxlen = 0, index = 0;
+        
+        for (int i = 1; i < n - 1; i++) {
+            if (p[i] > maxlen) {
+                maxlen = p[i];
+                index = i;
+            }
+        }
+
+        return s.substr((index - maxlen) / 2, maxlen - 1);
+    }
+
+
+    string preProcess(const string &s)
+    {
+        int n = s.size();
+        string res;
+
+        res.push_back("$");
+        res.push_back("#");
+
+        for (int i = 0; i < n; i++) {
+            res.push_back(s[i]);
+            res.push_back("#");
+        }
+
+        res.push_back(^);
+
+        return res;
     }
 
 };
