@@ -7,8 +7,26 @@
  */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
 //test
 
+int main()
+{
+    vector<int> v{1,2,3,4,5,6,7};
+
+    for (int i = 0; i < v.size() - 1; i++) {
+        if (v[i] < v[i+1]) {
+            cout << ' ' << v[i];
+        } else {
+            cout << "False!" << endl;
+            break;
+        }
+    }
+
+    cout << endl << "Done!!" << endl;
+
+    return 0;
+}
