@@ -9,6 +9,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -28,4 +29,9 @@ private:
         return 1 + min (minDepth(root->left, root->right != nullptr),
                 minDepth(root->right, root0->left != nullptr));
     }
+};
+
+class Solution_stack {
+public:
+    //TODO:
 };
