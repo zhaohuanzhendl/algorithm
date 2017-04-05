@@ -6,6 +6,10 @@
  * Copyright  (C) zhzcsp@gmail.com
  */
 
+/*
+ * REF: http://bangbingsyb.blogspot.com/2014/11/leetcode-subsets-i-ii.html
+ */
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
