@@ -14,7 +14,7 @@ void bubble_sort(int r[], int n)
     int i = 0, j = 0;
 
     unsigned int change = 1;
-    for (int i = 1; i < n && change; i++) {
+    for (i = 1; i < n && change; i++) {
         change = 0;
         
         //for (j = i + 1; j < n; j++) {
