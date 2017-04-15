@@ -58,3 +58,20 @@ public:
         return true;
     }
 };
+
+int main()
+{
+
+    Solution S;
+    vector<vector<string> > res = S.solveNQueesn(4);
+
+    for (auto r : res) {
+        for (auto v: r) {
+            cout << v << endl;
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    return 0;
+}
