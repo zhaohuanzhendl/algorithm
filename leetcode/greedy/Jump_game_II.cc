@@ -19,8 +19,8 @@ public:
 
         while (left <= right) {
             ++step;
+            int old_right = right;
             for (int i = left; i < right; i++) {
-                int old_right = right;
                 new_right = i + A[i];
                 if (new_right > n - 1)  return step;
                 if (new_right > right) {
