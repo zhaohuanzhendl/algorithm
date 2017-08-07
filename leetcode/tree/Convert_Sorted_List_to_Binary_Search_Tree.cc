@@ -42,3 +42,8 @@ public:
         return parent;
     }
 };
+
+int main()
+{
+    
+}

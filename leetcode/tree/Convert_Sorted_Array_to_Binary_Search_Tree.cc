@@ -12,6 +12,14 @@
 
 using namespace std;
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
+};
+
+
 class Solution {
 public:
     TreeNode * sortedArrayToBST(vector<int> &num)
@@ -33,3 +41,18 @@ public:
         return root;
     }
 };
+
+int main()
+{
+    vector<int> via = {2, 3, 5, 6,8,12,18,22,29,35};
+    vector<int> vi = {2, 3, 5, 6, 8};
+    vector<int> &rvi = vi;
+    Solution st;
+    TreeNode *tree = st.sortedArrayToBST(rvi);
+    cout << "tree->left->val: " << tree->left->val << endl;
+    cout << "trer->val: " << tree->val<<endl;
+    cout << "tree->right->val: " << tree->right->val << endl;
+
+    return 0;
+}
+
