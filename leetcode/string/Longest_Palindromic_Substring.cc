@@ -16,6 +16,7 @@ using namespace std;
 
 class Solution {
 public:
+#if 0
     string longestPS_force(string s)
     {
         const int len = s.size();
@@ -36,7 +37,7 @@ public:
 
             low = i - 1;
             high = i + 1;
-            while (low >= 0; && high < len && s[low] == s[high]) {
+            while (low >= 0 && high < len && s[low] == s[high]) {
                 low--;
                 high++;
             }
@@ -52,12 +53,12 @@ public:
         return s.substr(start, maxlen);
     }
 
+#endif
 
-
-    string longestPS_dp(string s)
-    {
-        
-    }
+    //string longestPS_dp(string s)
+    //{
+    //    
+    //}
 
 
 
@@ -69,6 +70,7 @@ public:
         }        
 
         string str = preProcess(s);
+        cout << "preProcess str: " << str << endl;
         int n = str.size();
         int id = 0, mx = 0;
         vector<int>p(n, 0);
@@ -100,7 +102,8 @@ public:
     }
 
 
-    string preProcess(const string &s)
+    //string preProcess(const string &s)
+    string preProcess(const string s)
     {
         int n = s.size();
         string res;
@@ -113,9 +116,20 @@ public:
             res.push_back("#");
         }
 
-        res.push_back(^);
+        res.push_back("^");
 
         return res;
     }
 
 };
+
+
+int main()
+{
+    string str("adbssabcdcdbasdg");
+    Solution S;
+    string res = S.longestPS_Manacher(str);
+    cout << "final res: " << res << endl;
+
+    return 0;
+}

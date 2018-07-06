@@ -51,3 +51,12 @@ public:
         return strs[0].substr(0, right_most + 1);
     }
 };
+
+int main()
+{
+    vector<string> strs = {"abc", "abdef"};
+    Solution S;
+    string str = S.longestCommonPrefix(strs);
+    cout << "res: " << str << endl;
+    return 0;
+}

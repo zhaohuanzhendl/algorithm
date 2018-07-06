@@ -47,6 +47,8 @@ char *count_and_say(int n)
     for (int i = 1; i < n; i++) {
         count_say(p, s);
         strcpy(p, s);
+        memset(s, 0, 9999);
+        printf("%s\n", p);
     }
 
     return p;

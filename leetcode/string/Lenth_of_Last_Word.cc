@@ -48,6 +48,7 @@ public:
 int main()
 {
     char *s = "Hello World";
+    //string s = "Hello World";
 
     //Solution S;
     Solution_B S;
