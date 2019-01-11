@@ -76,7 +76,7 @@ public:
         vector<int>p(n, 0);
 
         for (int i = 0; i < len; i++) {
-            p[i] = mx > i ? min(p[2 * id - 1], mx - i) : 1;
+            p[i] = mx > i ? min(p[2 * id - i], mx - i) : 1;
             
             while (str[i + p[i]] == str[i - p[i]]) {
                 p[i]++;
