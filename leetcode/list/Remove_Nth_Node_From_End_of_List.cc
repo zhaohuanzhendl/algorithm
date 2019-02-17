@@ -19,10 +19,10 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode *rotate(ListNode *head, int n)
+    ListNode *rm_n(ListNode *head, int n)
     {
-        if (head == nullptr || n)
-        ListNode    dummy(-1, head);
+        if (head == nullptr || n < 0 ) return head;
+        ListNode    dummy(-1);
         ListNode    *p = &dummy; *q = &dummy;
         
         //make sure : n < len
@@ -43,5 +43,27 @@ public:
         return dummy.next;
         
     }
+
+    ListNode *rm_nth_end(ListNode *head, int n)
+    {
+        ListNode dummy(-1);
+        dummy.next = head;
+        ListNode *p = &dummy, *q=&dummy;
+
+        for (int i=0; i<n; i++)
+            q = q->next;
+
+        while (q->next) {
+            p = p->next;
+            q = q->next;
+        }
+
+        ListNode *tmp = p->next;
+        p->next = p->next->next;
+        delete tmp;
+
+        return dummy.next;
+    }
 };
+
 

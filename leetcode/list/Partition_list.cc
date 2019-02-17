@@ -44,7 +44,6 @@ public:
             }
 
             p = p->next;
-        
         }
 
         p1->next = dummy2.next;
