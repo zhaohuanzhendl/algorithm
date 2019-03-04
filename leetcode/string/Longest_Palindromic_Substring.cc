@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -73,9 +74,9 @@ public:
         cout << "preProcess str: " << str << endl;
         int n = str.size();
         int id = 0, mx = 0;
-        vector<int>p(n, 0);
-
-        for (int i = 0; i < len; i++) {
+        vector<int> p(n, 0);
+        
+        for (int i = 0; i < n; i++) {
             p[i] = mx > i ? min(p[2 * id - i], mx - i) : 1;
             
             while (str[i + p[i]] == str[i - p[i]]) {
@@ -97,7 +98,7 @@ public:
                 index = i;
             }
         }
-
+        
         return s.substr((index - maxlen) / 2, maxlen - 1);
     }
 
@@ -108,16 +109,26 @@ public:
         int n = s.size();
         string res;
 
-        res.push_back("$");
-        res.push_back("#");
+        //res.push_back("$");
+        //res.push_back("#");
+        //res += "$#";
+        res.push_back('$');
+        res.push_back('#');
 
         for (int i = 0; i < n; i++) {
+            //res.push_back(s[i]);
+            //res.push_back("#");
+            //res += s[i] + "#";
+            //res.append(s[i]);
+            //res += "#";
             res.push_back(s[i]);
-            res.push_back("#");
+            res.push_back('#');
         }
 
-        res.push_back("^");
-
+        //res.push_back("^");
+        //res += "^";
+        res.push_back('^');
+        cout << "prsProcess str: \n" << res << endl;
         return res;
     }
 
@@ -126,7 +137,7 @@ public:
 
 int main()
 {
-    string str("adbssabcdcdbasdg");
+    string str("adssadcdcdbasdg");
     Solution S;
     string res = S.longestPS_Manacher(str);
     cout << "final res: " << res << endl;

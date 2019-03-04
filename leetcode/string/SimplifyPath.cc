@@ -51,5 +51,35 @@ public:
 
         return out.str();
     }
+
+    string sp(string const &path)
+    {
+        vector<string> dirs;
+
+        for (auto i=path.begin(); i!=path.end(); ) {
+            ++i;
+
+            auto j = find(i, path.end(), '/');
+            auto dir = string(i, j);
+
+            if (!dir.empty() && dir !=".") {
+                if(dir =="..")
+                    dirs.pop_back();
+                else
+                    dirs.push_back(dir)
+            }
+            i = j;
+        }
+
+        stringsteam out;
+        if (dirs.empty()) {
+            out << "/";
+        } else {
+            for (auto dir: dirs)
+                out << "/"<< dir;
+        }
+
+        return out.str();
+    }
 };
 
